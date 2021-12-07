@@ -1,0 +1,258 @@
+#include<iostream>
+#include<fstream>
+#include<string.h>
+#include<ctype.h>
+#include<conio.h>
+using namespace std;
+class enter
+{
+    public:
+    int i,date,year_stu;
+    char branch[10],pre;
+    void get(int from,int end)
+    {
+        cout<<"Enter Branch: ";
+        cin>>branch;
+        if(strcmp(branch,"CE")==0)
+        {
+            ofstream o;
+            o.open("CE.txt",ios::app);
+            cout<<"Enter Date(ddmmyy): ";
+            cin>>date;
+            cout<<"Enter Entrance Year of Student: ";
+            cin>>year_stu;
+            for(i=from;i<=end;i++)
+            {
+                cout<<"Enter A or P for Roll No "<<i<<":";
+                cin>>pre;
+                o<<date<<"\t"<<year_stu<<"DCE"<<i<<"\t"<<pre<<endl;
+            }
+            o<<endl;
+        }
+        else if(strcmp(branch,"CS")==0)
+        {
+            ofstream o;
+            o.open("CSE.txt",ios::app);
+            cout<<"Enter Date(ddmmyy): ";
+            cin>>date;
+            cout<<"Enter Entrance Year of Student: ";
+            cin>>year_stu;
+            for(i=from;i<=end;i++)
+            {
+                cout<<"Enter A or P for Roll No "<<i<<":";
+                cin>>pre;
+                o<<date<<"\t"<<year_stu<<"DCS"<<i<<"\t"<<pre<<endl;
+            }
+            o<<endl;
+        }
+        else if(strcmp(branch,"ME")==0)
+        {
+            ofstream o;
+            o.open("ME.txt",ios::app);
+            cout<<"Enter Date(ddmmyy): ";
+            cin>>date;
+            cout<<"Enter Entrance Year of Student: ";
+            cin>>year_stu;
+            for(i=from;i<=end;i++)
+            {
+                cout<<"Enter A or P for Roll No "<<i<<":";
+                cin>>pre;
+                o<<date<<"\t"<<year_stu<<"ME"<<i<<"\t"<<pre<<endl;
+            }
+            o<<endl;
+        }
+        else if(strcmp(branch,"CL")==0)
+        {
+            ofstream o;
+            o.open("CL.txt",ios::app);
+            cout<<"Enter Date(ddmmyy): ";
+            cin>>date;
+            cout<<"Enter Entrance Year of Student: ";
+            cin>>year_stu;
+            for(i=from;i<=end;i++)
+            {
+                cout<<"Enter A or P for Roll No "<<i<<":";
+                cin>>pre;
+                o<<date<<"\t"<<year_stu<<"CL"<<i<<"\t"<<pre<<endl;
+            }
+            o<<endl;
+        }
+        else if(strcmp(branch,"IT")==0)
+        {
+            ofstream o;
+            o.open("CEday1.txt",ios::app);
+            cout<<"Enter Date(ddmmyy): ";
+            cin>>date;
+            cout<<"Enter Entrance Year of Student: ";
+            cin>>year_stu;
+            for(i=from;i<=end;i++)
+            {
+                cout<<"Enter A or P for Roll No "<<i<<":";
+                cin>>pre;
+                o<<date<<"\t"<<year_stu<<"DCS"<<i<<"\t"<<pre<<endl;
+            }
+            o<<endl;
+        }
+        else
+        {
+            cout<<"Invalid"<<endl;
+        }
+    }
+};
+class view
+{
+    public:
+    int i,j=0;
+    char year[10],date[100],branch[100],data[100];
+    void print()
+    {
+        cout<<"Enter Branch: ";
+        cin>>branch;
+        cout<<"Enter Year ";
+        cin>>year;
+        cout<<"Enter Date(ddmmyy): ";
+        cin>>date;
+        if(strcmp(branch,"CE")==0)
+        {
+            ifstream i;
+            i.open("CE.txt");
+            while(!i.eof())
+            {
+                i.getline(data,100);
+                if((data[j]==date[j])&&(data[1]==date[1])&&(data[2]==date[2])&&(data[3]==date[3])&&(data[4]==date[4]))
+                {
+                    if(data[7]==year[0]&&data[8]==year[1])
+                    {
+                        cout<<data<<endl;
+                    }
+                }
+                else
+                {
+
+                }
+            }
+        }
+        else if(strcmp(branch,"CS")==0)
+        {
+            ifstream i;
+            i.open("CSE.txt");
+            while(!i.eof())
+            {
+                i.getline(data,100);
+                if((data[j]==date[j])&&(data[1]==date[1])&&(data[2]==date[2])&&(data[3]==date[3])&&(data[4]==date[4]))
+                {
+                    if(data[7]==year[0]&&data[8]==year[1])
+                    {
+                        cout<<data<<endl;
+                    }
+                }
+                else
+                {
+
+                }
+            }
+        }
+        else if(strcmp(branch,"IT")==0)
+        {
+            ifstream i;
+            i.open("IT.txt");
+            while(!i.eof())
+            {
+                i.getline(data,100);
+                if((data[j]==date[j])&&(data[1]==date[1])&&(data[2]==date[2])&&(data[3]==date[3])&&(data[4]==date[4]))
+                {
+                    if(data[7]==year[0]&&data[8]==year[1])
+                    {
+                        cout<<data<<endl;
+                    }
+                }
+                else
+                {
+
+                }
+            }
+        }
+        else if(strcmp(branch,"CL")==0)
+        {
+            ifstream i;
+            i.open("CL.txt");
+            while(!i.eof())
+            {
+                i.getline(data,100);
+                if((data[j]==date[j])&&(data[1]==date[1])&&(data[2]==date[2])&&(data[3]==date[3])&&(data[4]==date[4]))
+                {
+                    if(data[7]==year[0]&&data[8]==year[1])
+                    {
+                        cout<<data<<endl;
+                    }
+                }
+                else
+                {
+
+                }
+            }
+        }
+        else if(strcmp(branch,"ME")==0)
+        {
+            ifstream i;
+            i.open("ME.txt");
+            while(!i.eof())
+            {
+                i.getline(data,100);
+                if((data[j]==date[j])&&(data[1]==date[1])&&(data[2]==date[2])&&(data[3]==date[3])&&(data[4]==date[4]))
+                {
+                    if(data[7]==year[0]&&data[8]==year[1])
+                    {
+                        cout<<data<<endl;
+                    }
+                }
+                else
+                {
+
+                }
+            }
+        }
+        else
+        {
+            cout<<"Invalid Option"<<endl;
+        }
+    }
+};
+int main()
+{
+    char choice;
+    int from,end;
+    do
+    {
+        cout<<"v) View of Attendance\ne)Enter\na)Exit"<<endl;
+        choice=getch();
+        switch(choice)
+        {
+            case 97:
+            {
+                cout<<"Thank You Visit Again";
+            }
+            break;
+            case 101:
+            {
+                enter e;
+                cout<<"Enter Start Value: ";
+                cin>>from;
+                cout<<"Enter End Value: ";
+                cin>>end;
+                e.get(from,end);
+            }
+            break;
+            case 118:
+            {
+                view v;
+                v.print();
+            }
+            break;
+            default:
+            cout<<"Invalid";
+            break;
+        }
+    }while(choice!=97);
+    return 0;
+}
